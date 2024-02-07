@@ -21,5 +21,6 @@ buildNumber.properties
 **/.gitignore
 **/.mvn
 **/target
+**/HELP.md
 /.idea/
 
