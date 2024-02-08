@@ -5,19 +5,25 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.2</version>
+        <version>3.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nwafu.catmall</groupId>
     <artifactId>catmall-member</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>catmall-member</name>
-    <description>catmall-member</description>
+    <description>会员管理</description>
+
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2023.0.0</spring-cloud.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.nwafu</groupId>
+            <artifactId>catmall-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
