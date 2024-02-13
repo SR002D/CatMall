@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: baidu-route
+          uri: https://www.baidu.com
+          predicates:
+            - Query=uri,baidu
+        - id: qq-route
+          uri: https://www.qq.com
+          predicates:
+            - Query=uri,qq
+
+  application:
+    name: catmall-gateway
+
+server:
+  port: 88
+

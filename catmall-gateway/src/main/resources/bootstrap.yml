@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 490f22e8-547e-41b0-ad05-77d686b1c348
+  application:
+    name: catmall-gateway
