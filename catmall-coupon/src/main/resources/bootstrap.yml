@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: catmall-coupon
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        # 测试环境
+        namespace: a9c7d37a-c2e0-49b5-b96e-ec2f3b5ffa57
+        # 配置分组
+        group: DEFAULT_GROUP

@@ -5,6 +5,9 @@ import java.util.Map;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,11 +29,29 @@ import com.nwafu.common.utils.R;
  * @email 610311761@qq.com
  * @date 2024-02-08 21:08:21
  */
+@RefreshScope(proxyMode = ScopedProxyMode.DEFAULT)
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
+
+    @Value("${coupon.user.name}")
+    private String username;
+
+    @Value("${coupon.user.age}")
+    private String userAge;
+    @RequestMapping("test")
+    public R test(){
+        return R.ok().put("name",username).put("age",userAge);
+    }
+
+    @RequestMapping("/member/list")
+    public R memberCoupon(){
+        CouponEntity coupon = new CouponEntity();
+        coupon.setCouponName("满100减10");
+        return R.ok().put("coupon",Arrays.asList(coupon));
+    }
 
     /**
       * 列表

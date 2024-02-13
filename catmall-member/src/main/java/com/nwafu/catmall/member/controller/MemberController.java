@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 
+import com.nwafu.catmall.member.feign.MemberCouponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +32,18 @@ import com.nwafu.common.utils.R;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private MemberCouponService memberCouponService;
+
+    @RequestMapping("test")
+    public R test(){
+        MemberEntity member = new MemberEntity();
+        member.setNickname("张三");
+
+       R memberCoupon = memberCouponService.memberCoupon();
+       return R.ok().put("member",member).put("coupon",memberCoupon.get("coupon"));
+
+    }
 
     /**
       * 列表
