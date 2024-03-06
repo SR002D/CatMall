@@ -2,6 +2,14 @@
 
 猫猫商城（CatMall、谷粒商城改名项目）
 
+## 主要技术栈
+
+- SpringBoot
+- MyBatisPlus
+- renren-fast快速搭建脚手架
+- nacos负载均衡和配置中心
+- 网关
+
 ## 使用依赖版本
 
 均参考谷粒商城的版本

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: renren-fast
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        # 测试环境
+        namespace: 6cea1284-c51e-442a-84e6-d4a38303735e
+        # 配置分组
+        group: DEFAULT_GROUP

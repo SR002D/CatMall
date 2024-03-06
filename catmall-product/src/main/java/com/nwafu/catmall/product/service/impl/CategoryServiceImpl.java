@@ -40,10 +40,18 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         // 找到一级分类
         List<CategoryEntity> level1Menus = entities.stream()
                 .filter(categoryEntity -> categoryEntity.getParentCid() == 0)
-                .map((menu)->{menu.setChildren(null); return menu;})
+                .map((menu)->{menu.setChildren(getChildrens(menu,entities)); return menu;})
                 .sorted((menu1,menu2)->{return (menu1.getSort()==null?0:menu1.getSort()) - (menu2.getSort()==null?0:menu2.getSort());})
                 .collect(Collectors.toList());
-        return entities;
+        return level1Menus;
+    }
+
+    @Override
+    public void removeMenuByIds(List<Long> list) {
+        // TODO: 检查当前删除的菜单是否被别的地方引用
+
+        // 逻辑删除
+        baseMapper.deleteBatchIds(list);
     }
 
     // 递归查找所有菜单的子菜单
