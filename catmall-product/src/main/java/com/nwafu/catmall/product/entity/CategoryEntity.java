@@ -1,10 +1,13 @@
 package com.nwafu.catmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 /**
@@ -12,7 +15,7 @@ import lombok.Data;
  * 
  * @author sr
  * @email 610311761@qq.com
- * @date 2024-02-08 16:05:24
+ * @date 2024-03-06 10:58:25
  */
 @Data
 @TableName("pms_category")
@@ -56,5 +59,11 @@ public class CategoryEntity implements Serializable {
 	 * 商品数量
 	 */
 	private Integer productCount;
+
+	/**
+	 * 孩子分类
+	 */
+	@TableField(exist = false)
+	private List<CategoryEntity> children;
 
 }

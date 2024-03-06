@@ -12,7 +12,7 @@ import lombok.Data;
  * 
  * @author sr
  * @email 610311761@qq.com
- * @date 2024-02-08 21:58:22
+ * @date 2024-03-06 10:53:19
  */
 @Data
 @TableName("ums_growth_change_history")

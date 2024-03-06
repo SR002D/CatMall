@@ -3,18 +3,16 @@ package com.nwafu.catmall.product.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import com.nwafu.catmall.product.entity.AttrEntity;
 import com.nwafu.catmall.product.service.AttrService;
+import com.nwafu.common.utils.PageUtils;
 import com.nwafu.common.utils.R;
 
 
@@ -24,7 +22,7 @@ import com.nwafu.common.utils.R;
  *
  * @author sr
  * @email 610311761@qq.com
- * @date 2024-02-08 16:05:24
+ * @date 2024-03-06 10:58:25
  */
 @RestController
 @RequestMapping("product/attr")
@@ -33,16 +31,14 @@ public class AttrController {
     private AttrService attrService;
 
     /**
-      * 列表
-      */
+     * 列表
+     */
     @RequestMapping("/list")
     //@RequiresPermissions("product:attr:list")
     public R list(@RequestParam Map<String, Object> params){
-        // 此处暂时不加条件, 但生产环境必须根据需求加
-        IPage<AttrEntity> result=attrService.lambdaQuery()
-                .page(new Page<>(Long.parseLong(params.get("currentPage").toString()),Long.parseLong(params.get("pageSize").toString())));
+        PageUtils page = attrService.queryPage(params);
 
-        return R.ok().put("page", result);
+        return R.ok().put("page", page);
     }
 
 
@@ -50,7 +46,7 @@ public class AttrController {
      * 信息
      */
     @RequestMapping("/info/{attrId}")
-    // @RequiresPermissions("product:attr:info")
+    //@RequiresPermissions("product:attr:info")
     public R info(@PathVariable("attrId") Long attrId){
 		AttrEntity attr = attrService.getById(attrId);
 
@@ -61,7 +57,7 @@ public class AttrController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("product:attr:save")
+    //@RequiresPermissions("product:attr:save")
     public R save(@RequestBody AttrEntity attr){
 		attrService.save(attr);
 
@@ -72,7 +68,7 @@ public class AttrController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("product:attr:update")
+    //@RequiresPermissions("product:attr:update")
     public R update(@RequestBody AttrEntity attr){
 		attrService.updateById(attr);
 
@@ -83,7 +79,7 @@ public class AttrController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("product:attr:delete")
+    //@RequiresPermissions("product:attr:delete")
     public R delete(@RequestBody Long[] attrIds){
 		attrService.removeByIds(Arrays.asList(attrIds));
 

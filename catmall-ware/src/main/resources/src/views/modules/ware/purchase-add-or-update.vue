@@ -4,32 +4,32 @@
     :close-on-click-modal="false"
     :visible.sync="visible">
     <el-form :model="dataForm" :rules="dataRule" ref="dataForm" @keyup.enter.native="dataFormSubmit()" label-width="80px">
-    <el-form-item label="采购人id" prop="assigneeId">
-      <el-input v-model="dataForm.assigneeId" placeholder="采购人id"></el-input>
+    <el-form-item label="" prop="assigneeId">
+      <el-input v-model="dataForm.assigneeId" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="采购人名" prop="assigneeName">
-      <el-input v-model="dataForm.assigneeName" placeholder="采购人名"></el-input>
+    <el-form-item label="" prop="assigneeName">
+      <el-input v-model="dataForm.assigneeName" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="联系方式" prop="phone">
-      <el-input v-model="dataForm.phone" placeholder="联系方式"></el-input>
+    <el-form-item label="" prop="phone">
+      <el-input v-model="dataForm.phone" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="优先级" prop="priority">
-      <el-input v-model="dataForm.priority" placeholder="优先级"></el-input>
+    <el-form-item label="" prop="priority">
+      <el-input v-model="dataForm.priority" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="状态" prop="status">
-      <el-input v-model="dataForm.status" placeholder="状态"></el-input>
+    <el-form-item label="" prop="status">
+      <el-input v-model="dataForm.status" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="仓库id" prop="wareId">
-      <el-input v-model="dataForm.wareId" placeholder="仓库id"></el-input>
+    <el-form-item label="" prop="wareId">
+      <el-input v-model="dataForm.wareId" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="总金额" prop="amount">
-      <el-input v-model="dataForm.amount" placeholder="总金额"></el-input>
+    <el-form-item label="" prop="amount">
+      <el-input v-model="dataForm.amount" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="创建日期" prop="createTime">
-      <el-input v-model="dataForm.createTime" placeholder="创建日期"></el-input>
+    <el-form-item label="" prop="createTime">
+      <el-input v-model="dataForm.createTime" placeholder=""></el-input>
     </el-form-item>
-    <el-form-item label="更新日期" prop="updateTime">
-      <el-input v-model="dataForm.updateTime" placeholder="更新日期"></el-input>
+    <el-form-item label="" prop="updateTime">
+      <el-input v-model="dataForm.updateTime" placeholder=""></el-input>
     </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
@@ -58,31 +58,31 @@
         },
         dataRule: {
           assigneeId: [
-            { required: true, message: '采购人id不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           assigneeName: [
-            { required: true, message: '采购人名不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           phone: [
-            { required: true, message: '联系方式不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           priority: [
-            { required: true, message: '优先级不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           status: [
-            { required: true, message: '状态不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           wareId: [
-            { required: true, message: '仓库id不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           amount: [
-            { required: true, message: '总金额不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           createTime: [
-            { required: true, message: '创建日期不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ],
           updateTime: [
-            { required: true, message: '更新日期不能为空', trigger: 'blur' }
+            { required: true, message: '不能为空', trigger: 'blur' }
           ]
         }
       }

@@ -55,6 +55,15 @@
     <el-form-item label="注册时间" prop="createTime">
       <el-input v-model="dataForm.createTime" placeholder="注册时间"></el-input>
     </el-form-item>
+    <el-form-item label="社交用户的唯一id" prop="socialUid">
+      <el-input v-model="dataForm.socialUid" placeholder="社交用户的唯一id"></el-input>
+    </el-form-item>
+    <el-form-item label="访问令牌" prop="accessToken">
+      <el-input v-model="dataForm.accessToken" placeholder="访问令牌"></el-input>
+    </el-form-item>
+    <el-form-item label="访问令牌的时间" prop="expiresIn">
+      <el-input v-model="dataForm.expiresIn" placeholder="访问令牌的时间"></el-input>
+    </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
@@ -86,7 +95,10 @@
           integration: '',
           growth: '',
           status: '',
-          createTime: ''
+          createTime: '',
+          socialUid: '',
+          accessToken: '',
+          expiresIn: ''
         },
         dataRule: {
           levelId: [
@@ -139,6 +151,15 @@
           ],
           createTime: [
             { required: true, message: '注册时间不能为空', trigger: 'blur' }
+          ],
+          socialUid: [
+            { required: true, message: '社交用户的唯一id不能为空', trigger: 'blur' }
+          ],
+          accessToken: [
+            { required: true, message: '访问令牌不能为空', trigger: 'blur' }
+          ],
+          expiresIn: [
+            { required: true, message: '访问令牌的时间不能为空', trigger: 'blur' }
           ]
         }
       }
@@ -173,6 +194,9 @@
                 this.dataForm.growth = data.member.growth
                 this.dataForm.status = data.member.status
                 this.dataForm.createTime = data.member.createTime
+                this.dataForm.socialUid = data.member.socialUid
+                this.dataForm.accessToken = data.member.accessToken
+                this.dataForm.expiresIn = data.member.expiresIn
               }
             })
           }
@@ -203,7 +227,10 @@
                 'integration': this.dataForm.integration,
                 'growth': this.dataForm.growth,
                 'status': this.dataForm.status,
-                'createTime': this.dataForm.createTime
+                'createTime': this.dataForm.createTime,
+                'socialUid': this.dataForm.socialUid,
+                'accessToken': this.dataForm.accessToken,
+                'expiresIn': this.dataForm.expiresIn
               })
             }).then(({data}) => {
               if (data && data.code === 0) {

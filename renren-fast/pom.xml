@@ -5,14 +5,14 @@
 
 	<groupId>com.nwafu.catmall</groupId>
 	<artifactId>renren-fast</artifactId>
-	<version>3.0.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description>renren-fast</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.6</version>
+		<version>2.1.8.RELEASE</version>
 	</parent>
 
 	<properties>
@@ -46,9 +46,9 @@
 		<!--wagon plugin 配置-->
 		<service-path>/work/renren</service-path>
 		<pack-name>${project.artifactId}-${project.version}.jar</pack-name>
-		<remote-addr>192.168.1.10:22</remote-addr>
+		<remote-addr>192.168.0.128:22</remote-addr>
 		<remote-username>root</remote-username>
-		<remote-passwd>123456</remote-passwd>
+		<remote-passwd>root</remote-passwd>
 	</properties>
 
 	<dependencies>

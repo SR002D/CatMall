@@ -275,9 +275,7 @@ public class GenUtils {
     public static String tableToJava(String tableName, String[] tablePrefixArray) {
         if (null != tablePrefixArray && tablePrefixArray.length > 0) {
             for (String tablePrefix : tablePrefixArray) {
-                  if (tableName.startsWith(tablePrefix)){
-                    tableName = tableName.replaceFirst(tablePrefix, "");
-                }
+                tableName = tableName.replace(tablePrefix, "");
             }
         }
         return columnToJava(tableName);

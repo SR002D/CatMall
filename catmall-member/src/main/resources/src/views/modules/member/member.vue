@@ -131,6 +131,24 @@
         label="注册时间">
       </el-table-column>
       <el-table-column
+        prop="socialUid"
+        header-align="center"
+        align="center"
+        label="社交用户的唯一id">
+      </el-table-column>
+      <el-table-column
+        prop="accessToken"
+        header-align="center"
+        align="center"
+        label="访问令牌">
+      </el-table-column>
+      <el-table-column
+        prop="expiresIn"
+        header-align="center"
+        align="center"
+        label="访问令牌的时间">
+      </el-table-column>
+      <el-table-column
         fixed="right"
         header-align="center"
         align="center"

@@ -1,8 +1,8 @@
 package com.nwafu.catmall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import com.nwafu.catmall.product.entity.CategoryEntity;
 import com.nwafu.catmall.product.service.CategoryService;
+import com.nwafu.common.utils.PageUtils;
 import com.nwafu.common.utils.R;
 
 
@@ -24,7 +23,7 @@ import com.nwafu.common.utils.R;
  *
  * @author sr
  * @email 610311761@qq.com
- * @date 2024-02-08 16:05:24
+ * @date 2024-03-06 10:58:25
  */
 @RestController
 @RequestMapping("product/category")
@@ -33,16 +32,13 @@ public class CategoryController {
     private CategoryService categoryService;
 
     /**
-      * 列表
-      */
-    @RequestMapping("/list")
+     * 列表
+     */
+    @RequestMapping("/list/tree")
     //@RequiresPermissions("product:category:list")
     public R list(@RequestParam Map<String, Object> params){
-        // 此处暂时不加条件, 但生产环境必须根据需求加
-        IPage<CategoryEntity> result=categoryService.lambdaQuery()
-                .page(new Page<>(Long.parseLong(params.get("currentPage").toString()),Long.parseLong(params.get("pageSize").toString())));
-
-        return R.ok().put("page", result);
+        List<CategoryEntity> entites = categoryService.listWithTree();
+        return R.ok().put("data", entites);
     }
 
 
@@ -50,7 +46,7 @@ public class CategoryController {
      * 信息
      */
     @RequestMapping("/info/{catId}")
-    // @RequiresPermissions("product:category:info")
+    //@RequiresPermissions("product:category:info")
     public R info(@PathVariable("catId") Long catId){
 		CategoryEntity category = categoryService.getById(catId);
 
@@ -61,7 +57,7 @@ public class CategoryController {
      * 保存
      */
     @RequestMapping("/save")
-    // @RequiresPermissions("product:category:save")
+    //@RequiresPermissions("product:category:save")
     public R save(@RequestBody CategoryEntity category){
 		categoryService.save(category);
 
@@ -72,7 +68,7 @@ public class CategoryController {
      * 修改
      */
     @RequestMapping("/update")
-    // @RequiresPermissions("product:category:update")
+    //@RequiresPermissions("product:category:update")
     public R update(@RequestBody CategoryEntity category){
 		categoryService.updateById(category);
 
@@ -83,7 +79,7 @@ public class CategoryController {
      * 删除
      */
     @RequestMapping("/delete")
-    // @RequiresPermissions("product:category:delete")
+    //@RequiresPermissions("product:category:delete")
     public R delete(@RequestBody Long[] catIds){
 		categoryService.removeByIds(Arrays.asList(catIds));
 

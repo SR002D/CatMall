@@ -16,6 +16,12 @@
     <el-form-item label="工作单id" prop="taskId">
       <el-input v-model="dataForm.taskId" placeholder="工作单id"></el-input>
     </el-form-item>
+    <el-form-item label="仓库id" prop="wareId">
+      <el-input v-model="dataForm.wareId" placeholder="仓库id"></el-input>
+    </el-form-item>
+    <el-form-item label="1-已锁定  2-已解锁  3-扣减" prop="lockStatus">
+      <el-input v-model="dataForm.lockStatus" placeholder="1-已锁定  2-已解锁  3-扣减"></el-input>
+    </el-form-item>
     </el-form>
     <span slot="footer" class="dialog-footer">
       <el-button @click="visible = false">取消</el-button>
@@ -34,7 +40,9 @@
           skuId: '',
           skuName: '',
           skuNum: '',
-          taskId: ''
+          taskId: '',
+          wareId: '',
+          lockStatus: ''
         },
         dataRule: {
           skuId: [
@@ -48,6 +56,12 @@
           ],
           taskId: [
             { required: true, message: '工作单id不能为空', trigger: 'blur' }
+          ],
+          wareId: [
+            { required: true, message: '仓库id不能为空', trigger: 'blur' }
+          ],
+          lockStatus: [
+            { required: true, message: '1-已锁定  2-已解锁  3-扣减不能为空', trigger: 'blur' }
           ]
         }
       }
@@ -69,6 +83,8 @@
                 this.dataForm.skuName = data.wareOrderTaskDetail.skuName
                 this.dataForm.skuNum = data.wareOrderTaskDetail.skuNum
                 this.dataForm.taskId = data.wareOrderTaskDetail.taskId
+                this.dataForm.wareId = data.wareOrderTaskDetail.wareId
+                this.dataForm.lockStatus = data.wareOrderTaskDetail.lockStatus
               }
             })
           }
@@ -86,7 +102,9 @@
                 'skuId': this.dataForm.skuId,
                 'skuName': this.dataForm.skuName,
                 'skuNum': this.dataForm.skuNum,
-                'taskId': this.dataForm.taskId
+                'taskId': this.dataForm.taskId,
+                'wareId': this.dataForm.wareId,
+                'lockStatus': this.dataForm.lockStatus
               })
             }).then(({data}) => {
               if (data && data.code === 0) {
