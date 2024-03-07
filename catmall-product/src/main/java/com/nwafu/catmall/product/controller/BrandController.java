@@ -1,9 +1,12 @@
 package com.nwafu.catmall.product.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.BindResult;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +18,7 @@ import com.nwafu.catmall.product.service.BrandService;
 import com.nwafu.common.utils.PageUtils;
 import com.nwafu.common.utils.R;
 
+import javax.validation.Valid;
 
 
 /**
@@ -58,9 +62,23 @@ public class BrandController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:brand:save")
-    public R save(@RequestBody BrandEntity brand){
-		brandService.save(brand);
+    // 增加校验注解
+    public R save(@Valid @RequestBody BrandEntity brand){
+//        if(result.hasErrors()){
+//            Map<String, String> map = new HashMap<>();
+//            result.getFieldErrors().forEach((item)->{
+//                // 获取错误字段名
+//                String field = item.getField();
+//                // 获取错误信息
+//                String message = item.getDefaultMessage();
+//                map.put(field,message);
+//            });
+//            return R.error(400,"提交数据不合法").put("data",map);
+//        }else{
+//            brandService.save(brand);
+//        }
 
+        brandService.save(brand);
         return R.ok();
     }
 
