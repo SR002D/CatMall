@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: catmall-third-party
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 14494ef7-91d2-4ae0-bb90-995512efe115
+        file-extension: yml
+
+
+

@@ -4,11 +4,13 @@
 
 ## 主要技术栈
 
+- 微服务分布式开发
 - SpringBoot
 - MyBatisPlus
 - renren-fast快速搭建脚手架
 - nacos负载均衡和配置中心
 - 网关
+- alibaba OSS对象存储
 
 ## 使用依赖版本
 
@@ -24,5 +26,9 @@
 ## 优化
 
 在顶级父模块的pom里写dependecyManageMent
+
+## TODO
+
+P62， sring cloud alibaba starter 依赖导入失败
 
 

@@ -9,44 +9,53 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.nwafu.catmall</groupId>
-    <artifactId>catmall-product</artifactId>
+    <groupId>com.nwafu</groupId>
+    <artifactId>catmall-third-party</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>catmall-product</name>
-    <description>商品服务</description>
+    <name>catmall-third-party</name>
+    <description>第三方服务整合</description>
 
     <properties>
         <java.version>8</java.version>
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
     </properties>
     <dependencies>
-<!--        common-->
         <dependency>
             <groupId>com.nwafu</groupId>
             <artifactId>catmall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.baomidou</groupId>
+                    <artifactId>mybatis-plus-boot-starter</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-<!--        spring web-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<!--        spring cloud-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-<!--        spring test-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<!--        junit-->
+
+        
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alicloud-oss</artifactId>
+            <version>2.2.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -54,6 +63,7 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -64,10 +74,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-
         </dependencies>
-
     </dependencyManagement>
 
     <build>
@@ -78,6 +85,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

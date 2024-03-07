@@ -18,6 +18,7 @@
         <module>catmall-product</module>
         <module>catmall-common</module>
         <module>catmall-gateway</module>
+        <module>catmall-third-party</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
     </modules>
