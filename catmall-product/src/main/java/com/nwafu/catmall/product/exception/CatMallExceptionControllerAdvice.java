@@ -19,7 +19,6 @@ public class CatMallExceptionControllerAdvice {
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public R handleValidException(MethodArgumentNotValidException e){
-        log.error("数据校验异常{}，异常类型{}",e.getMessage(),e.getClass());
         BindingResult result = e.getBindingResult();
         Map<String, String> map = new HashMap<>();
         result.getFieldErrors().forEach((item)->{
@@ -34,6 +33,7 @@ public class CatMallExceptionControllerAdvice {
 
     @ExceptionHandler(value = Throwable.class)
     public R exception(Throwable throwable){
+//        log.error("访问异常{}，异常类型{}",throwable.getMessage(),throwable.getClass());
         return R.error(BizCodeEnum.UNKNOW_EXEPTION.getCode(),BizCodeEnum.UNKNOW_EXEPTION.getMsg());
     }
 }

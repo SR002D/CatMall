@@ -11,6 +11,7 @@
 - nacos负载均衡和配置中心
 - 网关
 - alibaba OSS对象存储
+- 使用JSR303进行数据校验
 
 ## 使用依赖版本
 
@@ -29,6 +30,6 @@
 
 ## TODO
 
-P62， sring cloud alibaba starter 依赖导入失败
+P68，分组校验
 
 
