@@ -1,7 +1,12 @@
 package com.nwafu.catmall.product.service.impl;
 
+import com.mysql.cj.util.StringUtils;
+import com.nwafu.catmall.product.service.CategoryBrandRelationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -17,9 +22,11 @@ import com.nwafu.catmall.product.entity.CategoryEntity;
 import com.nwafu.catmall.product.service.CategoryService;
 
 
+
 @Service("categoryService")
 public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity> implements CategoryService {
-
+    @Autowired
+    CategoryBrandRelationService categoryBrandRelationService;
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
@@ -53,6 +60,34 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         // 逻辑删除
         baseMapper.deleteBatchIds(list);
     }
+
+    @Override
+    public Long[] findCatelogPath(Long catelogId) {
+        Long parentCid;
+        List<Long> list = new ArrayList<>();
+        CategoryEntity entity = this.getById(catelogId);
+        list.add(entity.getCatId());
+        // 依次找到父节点添加到list
+        while((parentCid = entity.getParentCid())!=0){
+            entity = this.getById(parentCid);
+            list.add(entity.getCatId());
+        }
+        // 翻转，从父到子结点
+        Collections.reverse(list);
+        return (Long[]) list.toArray(new Long[0]);
+    }
+
+    /**
+     * 级联更新
+     */
+    @Override
+    public void updateCascade(CategoryEntity category) {
+        this.updateById(category);
+        if(!StringUtils.isNullOrEmpty(category.getName())){
+            categoryBrandRelationService.updateCategory(category.getCatId(),category.getName());
+        }
+    }
+
 
     // 递归查找所有菜单的子菜单
     private List<CategoryEntity> getChildrens(CategoryEntity root,List<CategoryEntity> all){

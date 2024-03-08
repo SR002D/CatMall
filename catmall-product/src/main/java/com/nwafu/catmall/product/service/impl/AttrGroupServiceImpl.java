@@ -1,5 +1,6 @@
 package com.nwafu.catmall.product.service.impl;
 
+import com.mysql.cj.util.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -25,5 +26,29 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
 
         return new PageUtils(page);
     }
+
+    @Override
+    public PageUtils queryPage(Map<String, Object> params, Long catelogId) {
+        if (catelogId == 0) {
+            IPage<AttrGroupEntity> page = this.page(
+                    new Query<AttrGroupEntity>().getPage(params),
+                    new QueryWrapper<>());
+            return new PageUtils(page);
+        }else{
+            // 按三级分类查
+            String key = (String) params.get("key");
+            QueryWrapper<AttrGroupEntity> queryWrapper = new QueryWrapper<AttrGroupEntity>().eq("catelog_Id",catelogId);
+            if(!StringUtils.isNullOrEmpty(key)){
+                queryWrapper.and((obj)->{
+                    obj.eq("attr_group_id",key).or().like("attr_group_name",key);
+                });
+            }
+            IPage<AttrGroupEntity> page = this.page(
+                    new Query<AttrGroupEntity>().getPage(params),
+                    queryWrapper);
+            return new PageUtils(page);
+        }
+    }
+
 
 }
