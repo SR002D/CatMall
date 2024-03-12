@@ -1,11 +1,13 @@
 package com.nwafu.catmall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.nwafu.catmall.product.vo.AttrGroupRelationVo;
 import com.nwafu.catmall.product.vo.AttrRespVo;
 import com.nwafu.catmall.product.vo.AttrVo;
 import com.nwafu.common.utils.PageUtils;
 import com.nwafu.catmall.product.entity.AttrEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,5 +28,11 @@ public interface AttrService extends IService<AttrEntity> {
     AttrRespVo getAttrInfo(Long attrId);
 
     void updateAttr(AttrVo attr);
+
+    List<AttrEntity> getRelationAttr(Long attrgroupId);
+
+    void deleteRelation(AttrGroupRelationVo[] vos);
+
+    PageUtils getNoRelationAttr(Map<String, Object> params, Long attrgroupId);
 }
 
