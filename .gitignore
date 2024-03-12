@@ -24,3 +24,5 @@ buildNumber.properties
 **/HELP.md
 /.idea/
 
+**/resources/src
+
