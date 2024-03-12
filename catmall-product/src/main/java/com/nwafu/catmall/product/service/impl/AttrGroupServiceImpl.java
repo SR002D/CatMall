@@ -29,20 +29,21 @@ public class AttrGroupServiceImpl extends ServiceImpl<AttrGroupDao, AttrGroupEnt
 
     @Override
     public PageUtils queryPage(Map<String, Object> params, Long catelogId) {
+        // 按三级分类查
+        String key = (String) params.get("key");
+        QueryWrapper<AttrGroupEntity> queryWrapper = new QueryWrapper<AttrGroupEntity>();
+        if(!StringUtils.isNullOrEmpty(key)){
+            queryWrapper.and((obj)->{
+                obj.eq("attr_group_id",key).or().like("attr_group_name",key);
+            });
+        }
         if (catelogId == 0) {
             IPage<AttrGroupEntity> page = this.page(
                     new Query<AttrGroupEntity>().getPage(params),
-                    new QueryWrapper<>());
+                    queryWrapper);
             return new PageUtils(page);
         }else{
-            // 按三级分类查
-            String key = (String) params.get("key");
-            QueryWrapper<AttrGroupEntity> queryWrapper = new QueryWrapper<AttrGroupEntity>().eq("catelog_Id",catelogId);
-            if(!StringUtils.isNullOrEmpty(key)){
-                queryWrapper.and((obj)->{
-                    obj.eq("attr_group_id",key).or().like("attr_group_name",key);
-                });
-            }
+            queryWrapper.eq("catelog_Id",catelogId);
             IPage<AttrGroupEntity> page = this.page(
                     new Query<AttrGroupEntity>().getPage(params),
                     queryWrapper);

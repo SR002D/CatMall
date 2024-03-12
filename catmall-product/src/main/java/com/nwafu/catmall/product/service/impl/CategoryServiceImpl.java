@@ -74,7 +74,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         }
         // 翻转，从父到子结点
         Collections.reverse(list);
-        return (Long[]) list.toArray(new Long[0]);
+        return  list.toArray(new Long[0]);
     }
 
     /**
