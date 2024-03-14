@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.nwafu.catmall.product.entity.AttrEntity;
+import com.nwafu.catmall.product.service.AttrAttrgroupRelationService;
 import com.nwafu.catmall.product.service.AttrService;
 import com.nwafu.catmall.product.service.CategoryService;
 import com.nwafu.catmall.product.vo.AttrGroupRelationVo;
@@ -37,7 +38,15 @@ public class AttrGroupController {
     @Autowired
     private AttrService attrService;
 
-//    /1/noattr/relation?t=1710231004615&page=1&limit=10&key=
+    @Autowired
+    private AttrAttrgroupRelationService relationService;
+
+    @PostMapping("/attr/relation")
+    public R attrAddRelation(@RequestBody List<AttrGroupRelationVo> vos){
+        relationService.saveBatch(vos);
+        return R.ok();
+    }
+
     @GetMapping("/{attrgroupId}/noattr/relation")
     public R attrNoRelation(@PathVariable("attrgroupId") Long attrgroupId,
                             @RequestParam Map<String, Object> params){

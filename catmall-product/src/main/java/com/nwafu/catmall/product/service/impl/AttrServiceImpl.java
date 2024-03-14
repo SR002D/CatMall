@@ -65,7 +65,7 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         AttrEntity entity = new AttrEntity();
         BeanUtils.copyProperties(attr,entity);
         this.save(entity);
-        if(attr.getAttrType()== ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode()){
+        if(attr.getAttrType()== ProductConstant.AttrEnum.ATTR_TYPE_BASE.getCode() && attr.getAttrGroupId()!=null){
             // 保存关联关系
             AttrAttrgroupRelationEntity relationEntity = new AttrAttrgroupRelationEntity();
             relationEntity.setAttrGroupId(attr.getAttrGroupId());
@@ -108,7 +108,7 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
 
             // 设置分类和分组
             if("base".equalsIgnoreCase(type)){
-                if (relationEntity != null) {
+                if (relationEntity != null && relationEntity.getAttrGroupId()!=null) {
                     AttrGroupEntity attrGroupEntity = attrGroupDao.selectById(relationEntity.getAttrGroupId());
                     // 注入字段
                     attrRespVo.setGroupName(attrGroupEntity.getAttrGroupName());
