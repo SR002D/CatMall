@@ -7,14 +7,23 @@ spring:
         server-addr: 127.0.0.1:8848
     gateway:
       routes:
+        - id: member_route
+          uri: lb://catmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+            #  http://localhost:88/api/member/memberlevel/list
+            #  http://localhost:9000/member/memberlevel/list
+
         - id: product_route
           uri: lb://catmall-product
           predicates:
             - Path=/api/product/**
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
-#              http://localhost:88/api/product/category/list/tree
-#              http://localhost:11000/product/category/list/tree
+            #  http://localhost:88/api/product/category/list/tree
+            #  http://localhost:11000/product/category/list/tree
 
         - id: third_part
           uri: lb://catmall-third-party
@@ -22,8 +31,8 @@ spring:
             - Path=/api/third-party/**
           filters:
             - RewritePath=/api/third-party/(?<segment>.*),/$\{segment}
-#              http://localhost:88/api/third-party/oss/policy
-#              http://localhost:13000/oss/policy
+            #  http://localhost:88/api/third-party/oss/policy
+            #  http://localhost:13000/oss/policy
 
         - id: admin_route
           uri: lb://renren-fast
@@ -31,8 +40,8 @@ spring:
             - Path=/api/**
           filters:
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
-#              http://localhost:88/api/app/login
-#              http://localhost:8080/renren-fast/app/login
+            #  http://localhost:88/api/app/login
+            #  http://localhost:8080/renren-fast/app/login
 
 
 server:

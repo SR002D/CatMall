@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: catmall-member
+  cloud:
+    nacos:
+      config:
+        group: DEFAULT_GROUP
+        namespace: 1bfaa56c-733f-4529-bd55-9370cf66af3d
+        server-addr: 127.0.0.1:8848
