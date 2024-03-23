@@ -3,6 +3,7 @@ package com.nwafu.catmall.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.nwafu.common.to.SkuReductionTo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,6 +40,13 @@ public class SkuFullReductionController {
         PageUtils page = skuFullReductionService.queryPage(params);
 
         return R.ok().put("page", page);
+    }
+
+    @RequestMapping("/saveInfo")
+    //@RequiresPermissions("coupon:skufullreduction:list")
+    public R saveInfo(@RequestBody SkuReductionTo to){
+        skuFullReductionService.saveSkuReduction(to);
+        return R.ok();
     }
 
 
