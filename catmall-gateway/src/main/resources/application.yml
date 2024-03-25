@@ -16,6 +16,15 @@ spring:
             #  http://localhost:88/api/member/memberlevel/list
             #  http://localhost:9000/member/memberlevel/list
 
+        - id: ware_route
+          uri: lb://catmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+            #  http://localhost:88/api/ware/wareinfo/list
+            #  http://localhost:12000/ware/wareinfo/list
+
         - id: product_route
           uri: lb://catmall-product
           predicates:

@@ -27,6 +27,7 @@ import com.nwafu.common.utils.R;
 @RestController
 @RequestMapping("order/mqmessage")
 public class MqMessageController {
+
     @Autowired
     private MqMessageService mqMessageService;
 
