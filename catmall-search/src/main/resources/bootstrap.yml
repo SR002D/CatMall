@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: catmall-search
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        # 测试环境
+        namespace: 25ee9bea-0cb6-43c9-abdc-4a35cc16bbd2
+        # 配置分组
+        group: DEFAULT_GROUP
