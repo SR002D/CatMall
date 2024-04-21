@@ -1,17 +1,23 @@
 package com.nwafu.catmall.order.dao;
 
-import com.nwafu.catmall.order.entity.OrderEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.nwafu.catmall.order.entity.OrderEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 订单
- * 
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 11:01:11
  */
 @Mapper
 public interface OrderDao extends BaseMapper<OrderEntity> {
-	
+
+    /**
+     * 修改订单状态
+     * @param orderSn
+     * @param code
+     * @param payType
+     */
+    void updateOrderStatus(@Param("orderSn") String orderSn,
+                           @Param("code") Integer code,
+                           @Param("payType") Integer payType);
 }

@@ -8,10 +8,6 @@ import java.util.Map;
 
 /**
  * 订单项信息
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 11:01:11
  */
 public interface OrderItemService extends IService<OrderItemEntity> {
 

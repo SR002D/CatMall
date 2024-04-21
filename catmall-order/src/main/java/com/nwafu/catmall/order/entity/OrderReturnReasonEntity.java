@@ -2,18 +2,17 @@ package com.nwafu.catmall.order.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 退货原因
- * 
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 11:01:11
  */
+
+@ToString
 @Data
 @TableName("oms_order_return_reason")
 public class OrderReturnReasonEntity implements Serializable {

@@ -1,28 +1,19 @@
 package com.nwafu.catmall.order.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.nwafu.catmall.order.entity.RefundInfoEntity;
-import com.nwafu.catmall.order.service.RefundInfoService;
 import com.nwafu.common.utils.PageUtils;
 import com.nwafu.common.utils.R;
+import com.nwafu.catmall.order.entity.RefundInfoEntity;
+import com.nwafu.catmall.order.service.RefundInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
  * 退款信息
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 11:01:11
  */
 @RestController
 @RequestMapping("order/refundinfo")
