@@ -2,18 +2,11 @@ package com.nwafu.catmall.ware.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
-/**
- * 商品库存
- * 
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:33:18
- */
+import java.io.Serializable;
+
+
 @Data
 @TableName("wms_ware_sku")
 public class WareSkuEntity implements Serializable {

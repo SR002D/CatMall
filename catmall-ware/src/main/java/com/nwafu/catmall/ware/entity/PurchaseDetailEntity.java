@@ -2,19 +2,11 @@ package com.nwafu.catmall.ware.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
-/**
- * 
- * 
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:33:18
- */
+import java.io.Serializable;
+import java.math.BigDecimal;
+
 @Data
 @TableName("wms_purchase_detail")
 public class PurchaseDetailEntity implements Serializable {

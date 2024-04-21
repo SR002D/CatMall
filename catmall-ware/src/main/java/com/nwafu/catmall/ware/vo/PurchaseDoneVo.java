@@ -2,15 +2,16 @@ package com.nwafu.catmall.ware.vo;
 
 import lombok.Data;
 
-
-
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+
+
 @Data
 public class PurchaseDoneVo {
-    @NotNull
-    private Long id;    //采购单id
+
+    @NotNull(message = "id不允许为空")
+    private Long id;
 
     private List<PurchaseItemDoneVo> items;
 

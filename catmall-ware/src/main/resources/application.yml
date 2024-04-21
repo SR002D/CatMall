@@ -1,27 +1,48 @@
+server:
+  port: 7000
+
 spring:
+  application:
+    name: catmall-ware
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://192.168.0.128:3306/catmall_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.77.130:3306/catmall_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
-  application:
-    name: catmall-ware
+        server-addr: localhost:8848
+
+    sentinel:
+      transport:
+        #配置sentinel dashboard地址
+        dashboard: localhost:8080
+
+#开启feign对sentinel的支持
+feign:
+  sentinel:
+    enabled: true
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
 
+
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/**/*.xml
+  mapper-locations: classpath:/mapper/**/*.xml
+
+  #\u8BBE\u7F6E\u5B9E\u4F53\u7C7B\u7684\u81EA\u589E\u4E3B\u952E
   global-config:
     db-config:
       id-type: auto
-server:
-  port: 12000
 logging:
   level:
-    com.nwafu: debug
+    com.com.nwafu.catmall: debug
 
-
+#暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

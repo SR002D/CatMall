@@ -1,29 +1,17 @@
 package com.nwafu.catmall.ware.controller;
 
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
+import com.nwafu.catmall.ware.entity.PurchaseDetailEntity;
+import com.nwafu.catmall.ware.service.PurchaseDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.Arrays;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.nwafu.catmall.ware.entity.PurchaseDetailEntity;
-import com.nwafu.catmall.ware.service.PurchaseDetailService;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
 
 
-
-/**
- * 
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:33:18
- */
 @RestController
 @RequestMapping("ware/purchasedetail")
 public class PurchaseDetailController {
@@ -59,6 +47,7 @@ public class PurchaseDetailController {
     @RequestMapping("/save")
     //@RequiresPermissions("ware:purchasedetail:save")
     public R save(@RequestBody PurchaseDetailEntity purchaseDetail){
+        purchaseDetail.setStatus(0);
 		purchaseDetailService.save(purchaseDetail);
 
         return R.ok();

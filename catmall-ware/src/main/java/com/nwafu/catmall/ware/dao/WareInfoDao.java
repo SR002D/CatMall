@@ -1,15 +1,11 @@
 package com.nwafu.catmall.ware.dao;
 
-import com.nwafu.catmall.ware.entity.WareInfoEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.nwafu.catmall.ware.entity.WareInfoEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 仓库信息
- * 
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:33:18
  */
 @Mapper
 public interface WareInfoDao extends BaseMapper<WareInfoEntity> {
