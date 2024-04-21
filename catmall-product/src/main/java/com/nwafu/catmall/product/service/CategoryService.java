@@ -3,16 +3,13 @@ package com.nwafu.catmall.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.nwafu.common.utils.PageUtils;
 import com.nwafu.catmall.product.entity.CategoryEntity;
+import com.nwafu.catmall.product.vo.Catelog2Vo;
 
 import java.util.List;
 import java.util.Map;
 
 /**
  * 商品三级分类
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:58:25
  */
 public interface CategoryService extends IService<CategoryEntity> {
 
@@ -20,14 +17,20 @@ public interface CategoryService extends IService<CategoryEntity> {
 
     List<CategoryEntity> listWithTree();
 
-    void removeMenuByIds(List<Long> list);
+    void removeMenuByIds(List<Long> asList);
 
     /**
-     * 找到catlogId的完整路径
+     * 找到catelogId的完整路径
      * [父/子/孙]
+     * @param catelogId
+     * @return
      */
     Long[] findCatelogPath(Long catelogId);
 
-    void updateCascade(CategoryEntity category);
+    public void updateCascade(CategoryEntity category);
+
+    List<CategoryEntity> getLevel1Categorys();
+
+    Map<String, List<Catelog2Vo>> getCatalogJson();
 }
 

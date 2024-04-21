@@ -3,15 +3,14 @@ package com.nwafu.catmall.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.nwafu.common.utils.PageUtils;
 import com.nwafu.catmall.product.entity.SkuInfoEntity;
+import com.nwafu.catmall.product.vo.SkuItemVo;
 
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 /**
  * sku信息
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:58:25
  */
 public interface SkuInfoService extends IService<SkuInfoEntity> {
 
@@ -19,6 +18,15 @@ public interface SkuInfoService extends IService<SkuInfoEntity> {
 
     void saveSkuInfo(SkuInfoEntity skuInfoEntity);
 
-    PageUtils queryPageByCondition(Map<String, Object> params);
+    PageUtils queryPageCondition(Map<String, Object> params);
+
+    List<SkuInfoEntity> getSkusBySpuId(Long spuId);
+
+    /**
+     * 查询商品详情
+     * @param skuId
+     * @return
+     */
+    SkuItemVo item(Long skuId) throws ExecutionException, InterruptedException;
 }
 

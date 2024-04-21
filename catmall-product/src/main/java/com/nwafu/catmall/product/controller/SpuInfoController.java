@@ -1,29 +1,20 @@
 package com.nwafu.catmall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import com.nwafu.catmall.product.vo.SpuSaveVo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.nwafu.catmall.product.entity.SpuInfoEntity;
-import com.nwafu.catmall.product.service.SpuInfoService;
 import com.nwafu.common.utils.PageUtils;
 import com.nwafu.common.utils.R;
+import com.nwafu.catmall.product.entity.SpuInfoEntity;
+import com.nwafu.catmall.product.service.SpuInfoService;
+import com.nwafu.catmall.product.vo.SpuSaveVo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
  * spu信息
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:58:25
  */
 @RestController
 @RequestMapping("product/spuinfo")
@@ -32,13 +23,36 @@ public class SpuInfoController {
     private SpuInfoService spuInfoService;
 
     /**
+     * 根据skuId查询spu的信息
+     * @param skuId
+     * @return
+     */
+    @GetMapping(value = "/skuId/{skuId}")
+    public R getSpuInfoBySkuId(@PathVariable("skuId") Long skuId) {
+
+        SpuInfoEntity spuInfoEntity = spuInfoService.getSpuInfoBySkuId(skuId);
+
+        return R.ok().setData(spuInfoEntity);
+    }
+
+    //商品上架
+    ///product/spuinfo/{spuId}/up
+    @PostMapping(value = "/{spuId}/up")
+    public R spuUp(@PathVariable("spuId") Long spuId) {
+
+        spuInfoService.up(spuId);
+
+        return R.ok();
+    }
+
+    /**
      * 列表
      */
     @RequestMapping("/list")
     //@RequiresPermissions("product:spuinfo:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = spuInfoService.queryPageByCondition(params);
-
+        PageUtils page = spuInfoService.queryPageByCondtion(params);
+        
         return R.ok().put("page", page);
     }
 
@@ -60,8 +74,10 @@ public class SpuInfoController {
     @RequestMapping("/save")
     //@RequiresPermissions("product:spuinfo:save")
     public R save(@RequestBody SpuSaveVo vo){
-//		spuInfoService.save(spuInfo);
-        spuInfoService.spuSaveVo(vo);
+		//spuInfoService.save(spuInfo);
+
+        spuInfoService.savesupInfo(vo);
+
         return R.ok();
     }
 

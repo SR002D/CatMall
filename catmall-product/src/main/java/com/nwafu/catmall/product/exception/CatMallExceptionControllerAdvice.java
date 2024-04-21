@@ -1,6 +1,5 @@
 package com.nwafu.catmall.product.exception;
 
-
 import com.nwafu.common.exception.BizCodeEnum;
 import com.nwafu.common.utils.R;
 import lombok.extern.slf4j.Slf4j;
@@ -28,12 +27,12 @@ public class CatMallExceptionControllerAdvice {
             String message = item.getDefaultMessage();
             map.put(field,message);
         });
-        return R.error(BizCodeEnum.VALID_EXCEPTION.getCode(),BizCodeEnum.VALID_EXCEPTION.getMsg()).put("data",map);
+        return R.error(BizCodeEnum.VAILD_EXCEPTION.getCode(),BizCodeEnum.VAILD_EXCEPTION.getMessage()).put("data",map);
     }
 
     @ExceptionHandler(value = Throwable.class)
     public R exception(Throwable throwable){
         log.error("访问异常{}，异常类型{}",throwable.getMessage(),throwable.getClass());
-        return R.error(BizCodeEnum.UNKNOW_EXEPTION.getCode(),BizCodeEnum.UNKNOW_EXEPTION.getMsg());
+        return R.error(BizCodeEnum.UNKNOW_EXCEPTION.getCode(),BizCodeEnum.UNKNOW_EXCEPTION.getMessage());
     }
 }

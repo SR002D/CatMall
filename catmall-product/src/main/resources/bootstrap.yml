@@ -1,11 +1,10 @@
 spring:
   application:
     name: catmall-product
+
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848
-        # 测试环境
-        namespace: 8cb8e0b4-ae44-48d0-8d75-6d468659eb33
-        # 配置分组
-        group: DEFAULT_GROUP
+        server-addr: localhost:8848
+        namespace: 67ee5d01-6af9-4aa6-a2e8-936d5f6fa67f
+

@@ -1,4 +1,4 @@
-
+/** Copyright 2020 bejson.com */
 package com.nwafu.catmall.product.vo;
 
 import lombok.Data;

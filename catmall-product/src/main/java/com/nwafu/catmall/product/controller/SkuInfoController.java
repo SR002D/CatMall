@@ -1,34 +1,44 @@
 package com.nwafu.catmall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.nwafu.catmall.product.entity.SkuInfoEntity;
-import com.nwafu.catmall.product.service.SkuInfoService;
 import com.nwafu.common.utils.PageUtils;
 import com.nwafu.common.utils.R;
+import com.nwafu.catmall.product.entity.SkuInfoEntity;
+import com.nwafu.catmall.product.service.SkuInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Map;
 
 
 
 /**
  * sku信息
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:58:25
  */
 @RestController
 @RequestMapping("product/skuinfo")
 public class SkuInfoController {
+
     @Autowired
     private SkuInfoService skuInfoService;
+
+    /**
+     * 根据skuId查询当前商品的价格
+     * @param skuId
+     * @return
+     */
+    @GetMapping(value = "/{skuId}/price")
+    public BigDecimal getPrice(@PathVariable("skuId") Long skuId) {
+
+        //获取当前商品的信息
+        SkuInfoEntity skuInfo = skuInfoService.getById(skuId);
+
+        //获取商品的价格
+        BigDecimal price = skuInfo.getPrice();
+
+        return price;
+    }
 
     /**
      * 列表
@@ -36,7 +46,7 @@ public class SkuInfoController {
     @RequestMapping("/list")
     //@RequiresPermissions("product:skuinfo:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = skuInfoService.queryPageByCondition(params);
+        PageUtils page = skuInfoService.queryPageCondition(params);
 
         return R.ok().put("page", page);
     }

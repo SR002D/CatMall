@@ -1,33 +1,22 @@
 package com.nwafu.catmall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
+import com.nwafu.common.utils.PageUtils;
+import com.nwafu.common.utils.R;
 import com.nwafu.common.valid.AddGroup;
 import com.nwafu.common.valid.UpdateGroup;
 import com.nwafu.common.valid.UpdateStatusGroup;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.nwafu.catmall.product.entity.BrandEntity;
 import com.nwafu.catmall.product.service.BrandService;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
  * 品牌
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:58:25
  */
 @RestController
 @RequestMapping("product/brand")
@@ -63,20 +52,39 @@ public class BrandController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:brand:save")
-    // 增加校验注解
-    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand){
+    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand
+            //, BindingResult result
+    ){
+
+        // Map<String,String> map = new HashMap<>();
+        //
+        // if (result.hasErrors()) {
+        //     //获取效验错误结果
+        //     result.getFieldErrors().forEach((item)-> {
+        //         //获取到错误提示
+        //         String message = item.getDefaultMessage();
+        //         //获取错误的属性的名字
+        //         String field = item.getField();
+        //         map.put(field,message);
+        //     });
+        //     return R.error(400,"提交的数据不合法").put("data",map);
+        // } else {
+        //
+        // }
         brandService.save(brand);
+
+
         return R.ok();
     }
 
     /**
      * 修改
      */
-    @Transactional
     @RequestMapping("/update")
     //@RequiresPermissions("product:brand:update")
-    public R update(@Validated(UpdateGroup.class) @RequestBody BrandEntity brand){
-		brandService.updateDetails(brand);
+    public R update(@Validated({UpdateGroup.class}) @RequestBody BrandEntity brand){
+		brandService.updateDetail(brand);
+
         return R.ok();
     }
 
@@ -87,6 +95,7 @@ public class BrandController {
     //@RequiresPermissions("product:brand:update")
     public R updateStatus(@Validated(UpdateStatusGroup.class) @RequestBody BrandEntity brand){
         brandService.updateById(brand);
+
         return R.ok();
     }
 

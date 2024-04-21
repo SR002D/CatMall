@@ -8,15 +8,11 @@ import java.util.Map;
 
 /**
  * spu信息介绍
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:58:25
  */
 public interface SpuInfoDescService extends IService<SpuInfoDescEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
-    void saveSpuInfoDesc(SpuInfoDescEntity descEntity);
+    void saveSpuInfoDesc(SpuInfoDescEntity spuInfoDescEntity);
 }
 

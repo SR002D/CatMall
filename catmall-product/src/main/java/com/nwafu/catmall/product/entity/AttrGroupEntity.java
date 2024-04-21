@@ -3,17 +3,12 @@ package com.nwafu.catmall.product.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
-import lombok.Data;
 
 /**
  * 属性分组
- * 
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:58:25
  */
 @Data
 @TableName("pms_attr_group")
@@ -45,9 +40,7 @@ public class AttrGroupEntity implements Serializable {
 	 * 所属分类id
 	 */
 	private Long catelogId;
-	/**
-	 * 回显路径
-	 */
+
 	@TableField(exist = false)
 	private Long[] catelogPath;
 
