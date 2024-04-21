@@ -34,7 +34,7 @@ spring:
             #  http://localhost:88/api/product/category/list/tree
             #  http://localhost:11000/product/category/list/tree
 
-        - id: third_part
+        - id: third_party_route
           uri: lb://catmall-third-party
           predicates:
             - Path=/api/third-party/**
@@ -51,6 +51,55 @@ spring:
             - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
             #  http://localhost:88/api/app/login
             #  http://localhost:8080/renren-fast/app/login
+
+        - id: coupon_route
+          uri: lb://catmall-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: order_route
+          uri: lb://catmall-order
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+
+        - id: catmall_host_route
+          uri: lb://catmall-product
+          predicates:
+            - Host=catmall.com,item.catmall.com
+
+        - id: catmall_search_route
+          uri: lb://catmall-search
+          predicates:
+            - Host=search.catmall.com
+
+        - id: catmall_auth_route
+          uri: lb://catmall-auth-server
+          predicates:
+            - Host=auth.catmall.com
+
+        - id: catmall_cart_route
+          uri: lb://catmall-cart
+          predicates:
+            - Host=cart.catmall.com
+
+        - id: catmall_order_route
+          uri: lb://catmall-order
+          predicates:
+            - Host=order.catmall.com
+
+        - id: catmall_member_route
+          uri: lb://catmall-member
+          predicates:
+            - Host=member.catmall.com
+
+        - id: catmall_seckill_route
+          uri: lb://catmall-seckill
+          predicates:
+            - Host=seckill.catmall.com
 
 
 server:

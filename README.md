@@ -30,4 +30,8 @@
 
 在顶级父模块的pom里写dependecyManageMent
 
+TODO：库存订单分布式事务+消息队列，秒杀服务，服务降级熔断，nacos负载均衡算法
+
+
+
 

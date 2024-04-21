@@ -20,6 +20,8 @@
         <module>catmall-gateway</module>
         <module>catmall-search</module>
         <module>catmall-third-party</module>
+        <module>catmall-auth-server</module>
+        <module>catmall-cart</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
     </modules>
