@@ -1,8 +1,8 @@
 package com.nwafu.catmall.product.feign;
 
-import com.nwafu.common.to.SkuReductionTo;
-import com.nwafu.common.to.SpuBoundTo;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.to.SkuReductionTo;
+import com.nwafu.catmall.common.to.SpuBoundTo;
+import com.nwafu.catmall.common.utils.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

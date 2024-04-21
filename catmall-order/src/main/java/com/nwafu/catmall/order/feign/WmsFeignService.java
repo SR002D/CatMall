@@ -1,6 +1,6 @@
 package com.nwafu.catmall.order.feign;
 
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.order.vo.WareSkuLockVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

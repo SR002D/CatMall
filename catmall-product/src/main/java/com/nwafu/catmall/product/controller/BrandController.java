@@ -1,10 +1,10 @@
 package com.nwafu.catmall.product.controller;
 
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
-import com.nwafu.common.valid.AddGroup;
-import com.nwafu.common.valid.UpdateGroup;
-import com.nwafu.common.valid.UpdateStatusGroup;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
+import com.nwafu.catmall.common.valid.AddGroup;
+import com.nwafu.catmall.common.valid.UpdateGroup;
+import com.nwafu.catmall.common.valid.UpdateStatusGroup;
 import com.nwafu.catmall.product.entity.BrandEntity;
 import com.nwafu.catmall.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;

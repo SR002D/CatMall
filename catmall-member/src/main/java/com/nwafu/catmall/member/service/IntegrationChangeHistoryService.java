@@ -1,7 +1,7 @@
 package com.nwafu.catmall.member.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.nwafu.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.PageUtils;
 import com.nwafu.catmall.member.entity.IntegrationChangeHistoryEntity;
 
 import java.util.Map;

@@ -2,10 +2,10 @@ package com.nwafu.catmall.authserver.controller;
 
 import com.nwafu.catmall.authserver.vo.UserLoginVo;
 import com.nwafu.catmall.authserver.vo.UserRegisterVo;
-import com.nwafu.common.constant.AuthServerConstant;
-import com.nwafu.common.exception.BizCodeEnum;
-import com.nwafu.common.utils.R;
-import com.nwafu.common.vo.MemberResponseVo;
+import com.nwafu.catmall.common.constant.AuthServerConstant;
+import com.nwafu.catmall.common.exception.BizCodeEnum;
+import com.nwafu.catmall.common.utils.R;
+import com.nwafu.catmall.common.vo.MemberResponseVo;
 import com.nwafu.catmall.authserver.feign.MemberFeignService;
 import com.nwafu.catmall.authserver.feign.ThirdPartFeignService;
 import org.apache.commons.lang.StringUtils;
@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import static com.nwafu.common.constant.AuthServerConstant.LOGIN_USER;
+import static com.nwafu.catmall.common.constant.AuthServerConstant.LOGIN_USER;
 
 
 @Controller

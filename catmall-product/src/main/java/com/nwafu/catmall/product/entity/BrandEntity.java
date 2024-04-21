@@ -2,10 +2,10 @@ package com.nwafu.catmall.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.nwafu.common.valid.AddGroup;
-import com.nwafu.common.valid.ListValue;
-import com.nwafu.common.valid.UpdateGroup;
-import com.nwafu.common.valid.UpdateStatusGroup;
+import com.nwafu.catmall.common.valid.AddGroup;
+import com.nwafu.catmall.common.valid.ListValue;
+import com.nwafu.catmall.common.valid.UpdateGroup;
+import com.nwafu.catmall.common.valid.UpdateStatusGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 

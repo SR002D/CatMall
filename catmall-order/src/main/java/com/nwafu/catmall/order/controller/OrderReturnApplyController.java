@@ -1,7 +1,7 @@
 package com.nwafu.catmall.order.controller;
 
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.order.entity.OrderReturnApplyEntity;
 import com.nwafu.catmall.order.service.OrderReturnApplyService;
 import org.springframework.beans.factory.annotation.Autowired;

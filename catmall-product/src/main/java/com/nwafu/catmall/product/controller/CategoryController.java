@@ -1,6 +1,6 @@
 package com.nwafu.catmall.product.controller;
 
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.product.entity.CategoryEntity;
 import com.nwafu.catmall.product.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

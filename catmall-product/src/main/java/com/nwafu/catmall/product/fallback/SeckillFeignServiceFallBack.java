@@ -1,7 +1,7 @@
 package com.nwafu.catmall.product.fallback;
 
-import com.nwafu.common.exception.BizCodeEnum;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.exception.BizCodeEnum;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.product.feign.SeckillFeignService;
 import org.springframework.stereotype.Component;
 

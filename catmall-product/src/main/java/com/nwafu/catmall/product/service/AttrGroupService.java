@@ -1,7 +1,7 @@
 package com.nwafu.catmall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.nwafu.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.PageUtils;
 import com.nwafu.catmall.product.entity.AttrGroupEntity;
 import com.nwafu.catmall.product.vo.AttrGroupWithAttrsVo;
 import com.nwafu.catmall.product.vo.SpuItemAttrGroupVo;

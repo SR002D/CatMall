@@ -7,13 +7,13 @@ import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lly835.bestpay.model.PayResponse;
 import com.lly835.bestpay.service.BestPayService;
-import com.nwafu.common.exception.NoStockException;
-import com.nwafu.common.to.OrderTo;
-import com.nwafu.common.to.mq.SeckillOrderTo;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.Query;
-import com.nwafu.common.utils.R;
-import com.nwafu.common.vo.MemberResponseVo;
+import com.nwafu.catmall.common.exception.NoStockException;
+import com.nwafu.catmall.common.to.OrderTo;
+import com.nwafu.catmall.common.to.mq.SeckillOrderTo;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.Query;
+import com.nwafu.catmall.common.utils.R;
+import com.nwafu.catmall.common.vo.MemberResponseVo;
 import com.nwafu.catmall.order.constant.PayConstant;
 import com.nwafu.catmall.order.dao.OrderDao;
 import com.nwafu.catmall.order.entity.OrderEntity;
@@ -51,7 +51,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import static com.nwafu.common.constant.CartConstant.CART_PREFIX;
+import static com.nwafu.catmall.common.constant.CartConstant.CART_PREFIX;
 import static com.nwafu.catmall.order.constant.OrderConstant.USER_ORDER_TOKEN_PREFIX;
 
 

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import com.nwafu.catmall.coupon.entity.SpuBoundsEntity;
 import com.nwafu.catmall.coupon.service.SpuBoundsService;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 
 
 

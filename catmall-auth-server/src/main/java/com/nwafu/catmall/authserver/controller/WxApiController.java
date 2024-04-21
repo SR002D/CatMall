@@ -4,8 +4,8 @@ import com.alibaba.fastjson.TypeReference;
 import com.nwafu.catmall.authserver.feign.MemberFeignService;
 import com.nwafu.catmall.authserver.utils.ConstantWxUtils;
 import com.nwafu.catmall.authserver.utils.HttpClientUtils;
-import com.nwafu.common.utils.R;
-import com.nwafu.common.vo.MemberResponseVo;
+import com.nwafu.catmall.common.utils.R;
+import com.nwafu.catmall.common.vo.MemberResponseVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import static com.nwafu.common.constant.AuthServerConstant.LOGIN_USER;
+import static com.nwafu.catmall.common.constant.AuthServerConstant.LOGIN_USER;
 
 
 @Slf4j

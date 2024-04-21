@@ -1,7 +1,7 @@
 package com.nwafu.catmall.member.controller;
 
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.member.entity.MemberCollectSpuEntity;
 import com.nwafu.catmall.member.service.MemberCollectSpuService;
 import org.springframework.beans.factory.annotation.Autowired;

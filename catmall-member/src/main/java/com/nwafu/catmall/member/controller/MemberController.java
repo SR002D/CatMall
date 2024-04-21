@@ -1,8 +1,8 @@
 package com.nwafu.catmall.member.controller;
 
-import com.nwafu.common.exception.BizCodeEnum;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.exception.BizCodeEnum;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.member.entity.MemberEntity;
 import com.nwafu.catmall.member.exception.PhoneException;
 import com.nwafu.catmall.member.exception.UsernameException;

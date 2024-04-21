@@ -1,7 +1,7 @@
 package com.nwafu.catmall.cart.interceptor;
 
 import com.nwafu.catmall.cart.to.UserInfoTo;
-import com.nwafu.common.vo.MemberResponseVo;
+import com.nwafu.catmall.common.vo.MemberResponseVo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
-import static com.nwafu.common.constant.AuthServerConstant.LOGIN_USER;
-import static com.nwafu.common.constant.CartConstant.TEMP_USER_COOKIE_NAME;
-import static com.nwafu.common.constant.CartConstant.TEMP_USER_COOKIE_TIMEOUT;
+import static com.nwafu.catmall.common.constant.AuthServerConstant.LOGIN_USER;
+import static com.nwafu.catmall.common.constant.CartConstant.TEMP_USER_COOKIE_NAME;
+import static com.nwafu.catmall.common.constant.CartConstant.TEMP_USER_COOKIE_TIMEOUT;
 
 
 /**

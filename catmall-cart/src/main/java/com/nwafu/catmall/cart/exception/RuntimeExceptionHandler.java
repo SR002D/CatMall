@@ -1,6 +1,6 @@
 package com.nwafu.catmall.cart.exception;
 
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

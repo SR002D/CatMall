@@ -1,8 +1,8 @@
 package com.nwafu.catmall.product.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.product.entity.BrandEntity;
 import com.nwafu.catmall.product.entity.CategoryBrandRelationEntity;
 import com.nwafu.catmall.product.service.CategoryBrandRelationService;

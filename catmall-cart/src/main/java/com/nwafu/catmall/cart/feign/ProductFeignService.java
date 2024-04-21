@@ -1,6 +1,6 @@
 package com.nwafu.catmall.cart.feign;
 
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

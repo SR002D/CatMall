@@ -5,8 +5,8 @@ import com.alibaba.csp.sentinel.adapter.servlet.callback.UrlBlockHandler;
 import com.alibaba.csp.sentinel.adapter.servlet.callback.WebCallbackManager;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.fastjson.JSON;
-import com.nwafu.common.exception.BizCodeEnum;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.exception.BizCodeEnum;
+import com.nwafu.catmall.common.utils.R;
 import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.http.HttpServletRequest;

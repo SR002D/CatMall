@@ -10,7 +10,7 @@ import com.nwafu.catmall.cart.to.UserInfoTo;
 import com.nwafu.catmall.cart.vo.CartItemVo;
 import com.nwafu.catmall.cart.vo.CartVo;
 import com.nwafu.catmall.cart.vo.SkuInfoVo;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.stream.Collectors;
 
-import static com.nwafu.common.constant.CartConstant.CART_PREFIX;
+import static com.nwafu.catmall.common.constant.CartConstant.CART_PREFIX;
 
 
 @Slf4j

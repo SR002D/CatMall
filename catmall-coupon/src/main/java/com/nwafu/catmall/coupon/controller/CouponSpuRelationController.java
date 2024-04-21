@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nwafu.catmall.coupon.entity.CouponSpuRelationEntity;
 import com.nwafu.catmall.coupon.service.CouponSpuRelationService;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 
 
 

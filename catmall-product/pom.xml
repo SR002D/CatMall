@@ -8,7 +8,7 @@
         <version>2.1.8.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.nwafu</groupId>
+    <groupId>com.nwafu.catmall</groupId>
     <artifactId>catmall-product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>catmall-product</name>
@@ -36,7 +36,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.nwafu</groupId>
+            <groupId>com.nwafu.catmall</groupId>
             <artifactId>catmall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

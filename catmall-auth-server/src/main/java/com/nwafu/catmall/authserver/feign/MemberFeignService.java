@@ -3,7 +3,7 @@ package com.nwafu.catmall.authserver.feign;
 import com.nwafu.catmall.authserver.vo.SocialUser;
 import com.nwafu.catmall.authserver.vo.UserLoginVo;
 import com.nwafu.catmall.authserver.vo.UserRegisterVo;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

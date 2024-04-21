@@ -1,7 +1,7 @@
 package com.nwafu.catmall.product.exception;
 
-import com.nwafu.common.exception.BizCodeEnum;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.exception.BizCodeEnum;
+import com.nwafu.catmall.common.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;

@@ -3,7 +3,7 @@ package com.nwafu.catmall.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import com.nwafu.common.to.SkuReductionTo;
+import com.nwafu.catmall.common.to.SkuReductionTo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nwafu.catmall.coupon.entity.SkuFullReductionEntity;
 import com.nwafu.catmall.coupon.service.SkuFullReductionService;
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 
 
 

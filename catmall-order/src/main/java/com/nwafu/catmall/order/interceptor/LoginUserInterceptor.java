@@ -1,6 +1,6 @@
 package com.nwafu.catmall.order.interceptor;
 
-import com.nwafu.common.vo.MemberResponseVo;
+import com.nwafu.catmall.common.vo.MemberResponseVo;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
-import static com.nwafu.common.constant.AuthServerConstant.LOGIN_USER;
+import static com.nwafu.catmall.common.constant.AuthServerConstant.LOGIN_USER;
 
 /**
  *  登录拦截器

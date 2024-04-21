@@ -1,7 +1,7 @@
 package com.nwafu.catmall.member.controller;
 
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.member.entity.MemberReceiveAddressEntity;
 import com.nwafu.catmall.member.service.MemberReceiveAddressService;
 import org.springframework.beans.factory.annotation.Autowired;

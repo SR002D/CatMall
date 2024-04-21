@@ -1,7 +1,7 @@
 package com.nwafu.catmall.product.controller;
 
-import com.nwafu.common.utils.PageUtils;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.PageUtils;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.product.entity.AttrEntity;
 import com.nwafu.catmall.product.entity.AttrGroupEntity;
 import com.nwafu.catmall.product.service.AttrAttrgroupRelationService;

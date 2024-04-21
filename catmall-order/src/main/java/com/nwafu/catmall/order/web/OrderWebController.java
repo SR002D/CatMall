@@ -1,6 +1,6 @@
 package com.nwafu.catmall.order.web;
 
-import com.nwafu.common.exception.NoStockException;
+import com.nwafu.catmall.common.exception.NoStockException;
 import com.nwafu.catmall.order.service.OrderService;
 import com.nwafu.catmall.order.vo.OrderConfirmVo;
 import com.nwafu.catmall.order.vo.OrderSubmitVo;

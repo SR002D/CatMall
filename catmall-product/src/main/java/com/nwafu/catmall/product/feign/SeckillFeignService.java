@@ -1,6 +1,6 @@
 package com.nwafu.catmall.product.feign;
 
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.product.fallback.SeckillFeignServiceFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

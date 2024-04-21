@@ -1,7 +1,7 @@
 package com.nwafu.catmall.member.web;
 
 import com.alibaba.fastjson.JSON;
-import com.nwafu.common.utils.R;
+import com.nwafu.catmall.common.utils.R;
 import com.nwafu.catmall.member.feign.OrderFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

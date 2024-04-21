@@ -1,7 +1,7 @@
 package com.nwafu.catmall.order.listener;
 
 import com.rabbitmq.client.Channel;
-import com.nwafu.common.to.mq.SeckillOrderTo;
+import com.nwafu.catmall.common.to.mq.SeckillOrderTo;
 import com.nwafu.catmall.order.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
