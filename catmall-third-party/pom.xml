@@ -21,7 +21,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.nwafu</groupId>
+            <groupId>com.nwafu.catmall</groupId>
             <artifactId>catmall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <exclusions>
@@ -62,6 +62,10 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
     </dependencies>
