@@ -8,10 +8,6 @@ import java.util.Map;
 
 /**
  * 成长值变化历史记录
- *
- * @author sr
- * @email 610311761@qq.com
- * @date 2024-03-06 10:53:19
  */
 public interface GrowthChangeHistoryService extends IService<GrowthChangeHistoryEntity> {
 
